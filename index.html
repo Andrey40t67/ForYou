@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игровой Портал</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #111; /* Темный фон */
+            color: #fff; /* Белый текст */
+            text-align: center;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        #game-links {
+            margin: 20px 0;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #ff5722; /* Оранжевый фон */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #e64a19; /* Темно-оранжевый на наведении */
+        }
+
+        #zamfibia-mode {
+            display: none;
+            background-color: #222; /* Темно-серый фон */
+            padding: 20px;
+            border: 3px solid #ff0000; /* Красная рамка */
+            box-shadow: 0 0 20px red; /* Красное свечение */
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        #scary-section {
+            display: none;
+            padding: 20px;
+            margin: 20px auto;
+            border: 3px solid red;
+            background-color: #333; /* Темно-серый фон */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff0000; /* Красный фон */
+            color: #fff; /* Белый текст */
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #990000; /* Темный красный на наведении */
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать на Игровой Портал!</h1>
+    <p>Выберите игру, чтобы начать:</p>
+
+    <div id="game-links">
+        <a href="https://elasticman.co/" target="_blank">Эластичный человек</a>
+        <a href="https://yandex.ru/games/tag/labirint_141" target="_blank">Яндекс Игры</a>
+        <a href="https://www.yyyyyyy.info/" target="_blank">Другие Игры</a>
+    </div>
+
+    <button id="open-zamfibia">Замфибия</button>
+    <div id="zamfibia-mode">
+        <p>Вы активировали режим "Замфибия"! Этот режим сделает сайт страшным и пугающим. Также 18+ сдесь расчленения и тд. (Не советуем)</p>
+        <button id="continue">Продолжить</button>
+    </div>
+
+    <div id="scary-section">
+        <p>Введите секретный код:</p>
+        <input type="password" id="secret-code" placeholder="Введите код">
+        <button id="verify-code">Подтвердить</button>
+        <div id="confirmation" class="hidden-content" style="display:none;">
+            <p>Вы уверены, что хотите активировать страшный режим18+?</p>
+            <button id="confirm">Да, продолжить</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('open-zamfibia').onclick = function() {
+            document.getElementById('zamfibia-mode').style.display = 'block';
+        };
+
+        document.getElementById('continue').onclick = function() {
+            document.getElementById('scary-section').style.display = 'block';
+        };
+
+        document.getElementById('verify-code').onclick = function() {
+            const code = document.getElementById('secret-code').value;
+            if (code === '2914') {
+                document.getElementById('confirmation').style.display = 'block';
+            } else {
+                alert('Неверный код!');
+            }
+        };
+
+        document.getElementById('confirm').onclick = function() {
+            document.body.style.backgroundColor = '#000'; /* Черный фон */
+            document.body.innerHTML = '<h1 style="color:red;">Добро пожаловать в режим Замфибия!</h1><p style="color:white;">Теперь вы никогда не найдете выход отсюда <span style="color:red; font-size:24px;">КРОВЬ СМЕРТЬ</span></p>';
+            document.body.innerHTML += '<a href="https://wwwww.jodi.org/" style="color: #fff; text-decoration: underline;">Следующий сайт</a>';
+        };
+    </script>
+</body>
+</html>
